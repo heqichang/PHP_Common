@@ -4,6 +4,7 @@
  * User: heqichang
  * Date: 14/12/30
  * Time: 上午10:22
+ * Description: 参考discuz上传类
  */
 
 namespace BH365;
