@@ -4,6 +4,7 @@
  * User: heqichang
  * Date: 14/12/30
  * Time: 下午5:50
+ * Description: 参考phpwind生成缩略图的功能类
  */
 
 namespace BH365;
@@ -49,8 +50,6 @@ class BH_thumb {
         $minitemp = $this->GetThumbInfo($srcFile, $dstW, $dstH, $cenTer);
         list($imagecreate, $imagecopyre) = $this->GetImagecreate($minitemp['type']);
         if (empty($minitemp) || !$imagecreate) return false;
-        //if ((empty($sameFile) && $dstFile === $srcFile) || empty($minitemp) || !$imagecreate) return false;
-        //!empty($sameFile) && $dstFile = $srcFile;
         $imgwidth = $minitemp['width'];
         $imgheight = $minitemp['height'];
         $srcX = $srcY = 0;
@@ -70,7 +69,6 @@ class BH_thumb {
         $dstX = $dstY = 0;
         $thumb = $imagecreate($minitemp['dstW'], $minitemp['dstH']);
 
-        //var_dump($thumb);
         if (function_exists('ImageColorAllocate') && function_exists('ImageColorTransparent')) {
             //背景透明处理
             $black = ImageColorAllocate($thumb,0,0,0);
